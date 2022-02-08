@@ -4,9 +4,9 @@ import { Result } from "./Result";
 export function ResultsList(props: {gifs: GIF[]}) {
 
     return (
-        <div>
-            <h2>Results</h2>
-            {props.gifs.map(gif => <Result gif={gif}></Result>)}
+        <div className="resultsList">
+            <h2 className="resultsHeader">Results</h2>
+            {props.gifs.map(gif => <Result key={gif.id} gif={gif}></Result>)}
         </div>
     );
 

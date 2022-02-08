@@ -10,13 +10,16 @@ export function Main() {
     const [searchTerm, setSearchTerm] = useState("");
 
     useEffect(() => {
-
-        getTrending().then(response => setGifs(response.data));
+        if(searchTerm === "") {
+            getTrending().then(response => setGifs(response.data));
+        } else {
+            getSearch(searchTerm).then(response => setGifs(response.data));
+        }
 
     }, []);
 
     return (
-        <div>
+        <div className="main">
 
             <SearchForm onSubmit={(searchTerm) => setSearchTerm(searchTerm)}></SearchForm>
 
