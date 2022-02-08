@@ -6,4 +6,4 @@ Users may also search for a particular GIF on Giphy.
 TypeScript, HTML, CSS
 
 ## Frameworks
-React# giphy-app-react
+React
