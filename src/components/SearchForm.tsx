@@ -2,14 +2,12 @@ import { useState } from "react";
 
 export function SearchForm(props: {onSubmit: (searchTerm: string) => void}) {
 
-    const [searchTerm, setSearchTerm] = useState("");
+    const [input, setInput] = useState("");
 
     return (
         <div>
-            <input value={searchTerm} onChange={(e) => 
-                setSearchTerm(e.target.value)} type="text"/> 
-            <button onClick={() => 
-                props.onSubmit(searchTerm)}>Search</button>
+            <input type="text" value={input} onChange={(e) => setInput(e.target.value)} /> 
+            <button onClick={() => props.onSubmit(input)}>Search</button>
         </div>
     );
 

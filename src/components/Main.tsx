@@ -11,22 +11,14 @@ export function Main() {
 
     useEffect(() => {
 
-        getTrending().then(data => setGifs(data));
+        getTrending().then(response => setGifs(response.data));
 
     }, []);
-
-    function setSearch(search: string) {
-
-        setSearchTerm(search);       
-
-    }
 
     return (
         <div>
 
-            <SearchForm 
-            onSubmit={(searchTerm) => 
-            setSearch(searchTerm)}></SearchForm>
+            <SearchForm onSubmit={(searchTerm) => setSearchTerm(searchTerm)}></SearchForm>
 
             <ResultsList gifs={gifs}></ResultsList>
 
